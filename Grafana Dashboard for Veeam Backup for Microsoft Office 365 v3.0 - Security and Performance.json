@@ -71,7 +71,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1560704733581,
+  "iteration": 1560898301306,
   "links": [],
   "panels": [
     {
@@ -1839,7 +1839,7 @@
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "link": false,
           "pattern": "Time",
-          "type": "hidden"
+          "type": "date"
         },
         {
           "alias": "",
@@ -1894,7 +1894,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"exchangeobject\" AS \"Item Restored\" FROM \"veeam_office365_audit_vex\" WHERE (\"exchangeobject\"  != '') limit 25",
+          "query": "SELECT \"exchangeobject\" AS \"Item Restored\" FROM \"veeam_office365_audit_vex\" WHERE (\"exchangeobject\"  != '') AND $timeFilter",
           "rawQuery": true,
           "refId": "B",
           "resultFormat": "table",
@@ -1928,7 +1928,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\",  \"restorefrom\" AS \"Restored From:\" FROM \"veeam_office365_audit_vex\" WHERE (\"restorefrom\" != '') limit 25",
+          "query": "SELECT \"restorefrom\" AS \"Restored From:\" FROM \"veeam_office365_audit_vex\" WHERE (\"restorefrom\" != '') AND $timeFilter",
           "rawQuery": true,
           "refId": "D",
           "resultFormat": "table",
@@ -1962,7 +1962,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"restoreto\" AS \"Restored To:\" FROM \"veeam_office365_audit_vex\" WHERE (\"restoreto\" != '')  limit 25",
+          "query": "SELECT \"restoreto\" AS \"Restored To:\" FROM \"veeam_office365_audit_vex\" WHERE (\"restoreto\" != '')   AND $timeFilter",
           "rawQuery": true,
           "refId": "E",
           "resultFormat": "table",
@@ -2016,7 +2016,7 @@
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "link": false,
           "pattern": "Time",
-          "type": "hidden"
+          "type": "date"
         },
         {
           "alias": "",
@@ -2071,7 +2071,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"message\" AS \"Item restored\" FROM \"veeam_office365_audit_vone\" WHERE \"message\" =~ /Item restore completed:*/  limit 25",
+          "query": "SELECT \"message\" AS \"Item restored\" FROM \"veeam_office365_audit_vone\" WHERE \"message\" =~ /Item restore completed:*/  AND $timeFilter ",
           "rawQuery": true,
           "refId": "B",
           "resultFormat": "table",
@@ -2125,7 +2125,7 @@
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "link": false,
           "pattern": "Time",
-          "type": "hidden"
+          "type": "date"
         },
         {
           "alias": "",
@@ -2180,7 +2180,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"message\" AS \"Item restored\" FROM \"veeam_office365_audit_vspo\" WHERE \"message\" =~ /Full URL:*/  limit 25",
+          "query": "SELECT \"message\" AS \"Item restored\" FROM \"veeam_office365_audit_vspo\" WHERE \"message\" =~ /Full URL:*/  AND $timeFilter ",
           "rawQuery": true,
           "refId": "B",
           "resultFormat": "table",
@@ -2214,7 +2214,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"message\" AS \"IsOriginalLocation\" FROM \"veeam_office365_audit_vspo\" WHERE \"message\" =~ /IsOriginalLocation:*/  limit 25",
+          "query": "SELECT \"message\" AS \"IsOriginalLocation\" FROM \"veeam_office365_audit_vspo\" WHERE \"message\" =~ /IsOriginalLocation:*/ AND $timeFilter ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "table",
@@ -2248,7 +2248,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"message\" AS \"IsRestoreToCloud \" FROM \"veeam_office365_audit_vspo\" WHERE \"message\" =~ /IsRestoreToCloud: */  limit 25",
+          "query": "SELECT \"message\" AS \"IsRestoreToCloud \" FROM \"veeam_office365_audit_vspo\" WHERE \"message\" =~ /IsRestoreToCloud: */ AND $timeFilter ",
           "rawQuery": true,
           "refId": "C",
           "resultFormat": "table",
@@ -2302,7 +2302,7 @@
           "dateFormat": "YYYY-MM-DD HH:mm:ss",
           "link": false,
           "pattern": "Time",
-          "type": "hidden"
+          "type": "date"
         },
         {
           "alias": "",
@@ -2357,7 +2357,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"restkey\" AS \"RESTAPI Key\" FROM \"veeam_office365_audit_rest\" WHERE  (\"restkey\"  != '') LIMIT 25",
+          "query": "SELECT \"restkey\" AS \"RESTAPI Key\" FROM \"veeam_office365_audit_rest\" WHERE  (\"restkey\"  != '') AND $timeFilter ",
           "rawQuery": true,
           "refId": "B",
           "resultFormat": "table",
@@ -2466,7 +2466,7 @@
           "measurement": "veeam_office365_audit_vex",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"restaction\" AS \"RESTAPI Action\" FROM \"veeam_office365_audit_rest\" WHERE  (\"restaction\"  != '') LIMIT 25",
+          "query": "SELECT (\"timestamp\") AS \"Timestamp\", \"restaction\" AS \"RESTAPI Action\" FROM \"veeam_office365_audit_rest\" WHERE  (\"restaction\"  != '') AND $timeFilter ",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "table",
@@ -2550,7 +2550,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-6M",
     "to": "now"
   },
   "timepicker": {
@@ -2581,5 +2581,5 @@
   "timezone": "browser",
   "title": "Grafana Dashboard for Veeam Backup for Microsoft Office 365 v3.0 - Security and Performance",
   "uid": "JCgJEt7Zk",
-  "version": 30
+  "version": 31
 }

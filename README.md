@@ -30,7 +30,7 @@ Collector data
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Account:%{GREEDYDATA:operator}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Account:%{GREEDYDATA:operator}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # Items to restore
@@ -41,7 +41,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Restoring message:%{GREEDYDATA:exchangeobject}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Restoring message:%{GREEDYDATA:exchangeobject}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # Restore From:
@@ -52,7 +52,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{SPACE} From:%{GREEDYDATA:restorefrom}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{SPACE} From:%{GREEDYDATA:restorefrom}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # Restore To:
@@ -63,7 +63,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{SPACE} To:%{GREEDYDATA:restoreto}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{SPACE} To:%{GREEDYDATA:restoreto}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # Bytes Restored
@@ -74,7 +74,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Creating %{GREEDYDATA} %{NUMBER:bytesrestored:int}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Creating %{GREEDYDATA} %{NUMBER:bytesrestored:int}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # # Read and parse Logs from Veeam Backup for Microsoft Office 365 RESTFulAPI
@@ -86,7 +86,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Adding new backup server session%{GREEDYDATA} %{GREEDYDATA:restkey}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Adding new backup server session%{GREEDYDATA} %{GREEDYDATA:restkey}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # REST REFRESH KEY ID
@@ -97,7 +97,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Credentials refreshed%{GREEDYDATA} \(key=%{GREEDYDATA:restkey}\)']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Credentials refreshed%{GREEDYDATA} \(key=%{GREEDYDATA:restkey}\)']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # REST ACTIONS
@@ -108,7 +108,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Action started:%{GREEDYDATA:restaction}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Action started:%{GREEDYDATA:restaction}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # # Read and parse Logs from Veeam Explorer for OneDrive for Business
@@ -120,7 +120,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Account:%{GREEDYDATA:operator}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Account:%{GREEDYDATA:operator}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # Global monitoring for VXONE
@@ -131,7 +131,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{GREEDYDATA:message}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{GREEDYDATA:message}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # # Read and parse Logs from Veeam Explorer for SharePoint Online
@@ -143,7 +143,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) Account:%{GREEDYDATA:operator}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) Account:%{GREEDYDATA:operator}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 # Global monitoring for VXSPO
@@ -154,7 +154,7 @@ custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
   watch_method = "poll"
 
 [inputs.logparser.grok]
-patterns = ['%{DATESTAMP_AMPM:timestamp} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{GREEDYDATA:message}']
+patterns = ['%{DATESTAMP_AMPM:timestamp:ts-"1/2/2006 3:04:05 PM"} %{SPACE} %{NUMBER} \(%{NUMBER}\) %{GREEDYDATA:message}']
 custom_patterns = "DATESTAMP_AMPM %{DATESTAMP} (AM|PM)"
 
 
