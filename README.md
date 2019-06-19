@@ -10,7 +10,7 @@ We use Veeam the latest version of Telegraf for Microsoft Windows, and parse the
 ----------
 
 ### Getting started
-You can follow the steps on the next Blog Post - https://www.jorgedelacruz.es/2019/06/17/en-busca-del-dashboard-perfecto-influxdb-telegraf-y-grafana-parte-xvi-rendimiento-y-seguridad-avanzada-de-veeam-backup-for-microsoft-office-365/
+You can follow the steps on the next Blog Post - https://jorgedelacruz.uk/2019/06/18/looking-for-perfect-dashboard-influxdb-telegraf-and-grafana-part-xvi-performance-and-advanced-security-of-veeam-backup-for-microsoft-office-365/
 
 Or try with this simple steps:
 * Download telegraf for Microsoft Windows, install it as a Windows Service and open the telegraf.conf and change the parameters under output, like username/password, etc. with your real data
